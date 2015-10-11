@@ -1,0 +1,3 @@
+# from galaxy
+- src: https://github.com/tmtk75/ansible-nomad
+  name: nomad

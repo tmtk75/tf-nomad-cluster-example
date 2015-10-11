@@ -1,0 +1,8 @@
+Host *.compute.amazonaws.com
+  User centos
+  IdentityFile ./id_rsa 
+
+Host *
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+  LogLevel ERROR

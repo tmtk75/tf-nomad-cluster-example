@@ -1,0 +1,32 @@
+- hosts: all
+  sudo: true
+
+  roles:
+  - nomad
+
+  tasks:
+  - yum: name={{ item }} state=present
+    with_items:
+    - epel-release
+    - https://yum.puppetlabs.com/puppetlabs-release-el-{{ ansible_distribution_major_version }}.noarch.rpm
+    tags:
+    - yum
+
+  - yum: name={{ item }} state=present
+    with_items:
+    - puppet
+    - vim-enhanced
+    - sysstat
+    - bind-utils
+    - jq
+    - docker
+    tags:
+    - yum
+
+  - hostname: name={{ localname }}-{{ facter_ipaddress | replace(".", "-") }}-{{ facter_ec2_instance_id }}
+    tags:
+    - hostname
+
+  - service: name=docker state=started
+    tags:
+    - service

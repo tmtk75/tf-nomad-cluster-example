@@ -1,0 +1,12 @@
+.*.swp
+terraform.tfvars
+.terraform
+terraform.tfstate*
+.e
+bin
+hosts.ini
+id_rsa
+id_rsa.pub
+roles
+host_vars
+.vagrant
