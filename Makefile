@@ -16,7 +16,7 @@ tf-destroy:
 ping: hosts.ini
 	ansible -i hosts.ini -m ping all
 
-yum: hosts.ini
+yum: hosts.ini roles/nomad
 	ansible-playbook -i hosts.ini playbook.yml -t yum
 
 nomad: hosts.ini roles/nomad host_vars
