@@ -1,6 +1,7 @@
 # README
 
 Example for terraform & ansible code to easily launch a nomad cluster.
+I tested this with nomad-0.1.2.
 
 ## Summary
 - AWS region is ap-southeast-1
