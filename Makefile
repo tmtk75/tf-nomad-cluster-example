@@ -20,7 +20,7 @@ yum: hosts.ini roles/nomad
 	ansible-playbook -i hosts.ini playbook.yml -t yum
 
 nomad: hosts.ini roles/nomad host_vars
-	ansible-playbook -i hosts.ini playbook.yml -t nomad
+	ansible-playbook -i hosts.ini playbook.yml -t nomad,service
 
 join:
 	ssh -F ssh-config `terraform output node1` /usr/local/sbin/nomad server-join `terraform output node0.private_dns`

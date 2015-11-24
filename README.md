@@ -23,5 +23,10 @@ Let's try next targets. You can see a page of elasticsearch-head if all successf
 ```
 $ make tf-plan tf-apply
 $ make ping    # Wait for all hosts are ready
-$ make yum nomad
+$ make yum docker nomad
+$ ansible-playbook -i hosts.ini playbook.yml -t hostname
+```
+```
+$ make ssh
+[node0]$ nomad init
 ```
