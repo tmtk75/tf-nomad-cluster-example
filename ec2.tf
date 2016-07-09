@@ -124,7 +124,7 @@ resource "aws_instance" "node" {
     key_name                    = "${aws_key_pair.ec2-key.key_name}"
     security_groups             = ["${aws_security_group.node.id}"]
     subnet_id                   = "${module.vpc.subnet_id_black}"
-    iam_instance_profile        = "${aws_iam_instance_profile.node.id}"
+    iam_instance_profile        = "${aws_iam_instance_profile.node.name}"
     associate_public_ip_address = true
     disable_api_termination     = false
     count                       = 5
